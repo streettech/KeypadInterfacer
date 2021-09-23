@@ -49,3 +49,32 @@ void RTModule::begin(char* portname) {
         }
 	}
 }
+
+int RTModule::readport(char* buffer, uint buffersize) {
+    DWORD byteread;
+    uint toread = 0;
+
+    ClearCommError(this->hcomm, &this->error, &this->status);
+
+    if (this->status.cbInQue > 0) {
+        if (this->status.cbInQue > buffersize) {
+            toread = buffersize;
+        }
+        else toread = this->status.cbInQue;
+    }
+
+    if (ReadFile(this->hcomm, buffer, toread, &byteread, NULL)) return byteread;
+
+    return 0;
+}
+
+bool RTModule::writeport(char* buffer, uint buffersize) {
+    DWORD bytewrite;
+
+    if (!WriteFile(this->hcomm, (void*)buffer, buffersize, &bytewrite, 0)) {
+        ClearCommError(this->hcomm, &this->error, &this->status);
+        return false;
+    }
+
+    return true;
+}

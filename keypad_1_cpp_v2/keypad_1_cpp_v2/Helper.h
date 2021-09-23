@@ -4,6 +4,8 @@
 
 #define BIT(x) (1 << x)
 
+typedef unsigned int uint;
+
 typedef struct {
 	int row;
 	int cols;

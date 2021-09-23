@@ -4,6 +4,7 @@
 
 #include <Windows.h>
 #include <iostream>
+#include "Helper.h"
 
 class RTModule {
 public:
@@ -12,8 +13,12 @@ public:
 	RTModule();
 	~RTModule();
 	void begin(char* portname);
+	int readport(char* buffer, uint buffersize);
+	bool writeport(char* buffer, uint buffersize);
 private:
 	HANDLE hcomm;
+	COMSTAT status;
+	DWORD error;
 };
 
 #endif // !RTMODULE_H
