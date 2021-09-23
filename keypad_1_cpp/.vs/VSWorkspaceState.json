@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\keypad_1_cpp",
+    "\\keypad_1_cpp\\Event",
+    "\\keypad_1_cpp\\Event\\headers",
+    "\\keypad_1_cpp\\Helper",
+    "\\keypad_1_cpp\\Helper\\headers",
+    "\\keypad_1_cpp\\KeyPad",
+    "\\keypad_1_cpp\\KeyPad\\headers",
+    "\\keypad_1_cpp\\srcHeaders"
+  ],
+  "SelectedNode": "\\keypad_1_cpp\\Helper\\headers\\Helper.h",
+  "PreviewInSolutionExplorer": false
+}
